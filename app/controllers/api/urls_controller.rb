@@ -25,7 +25,7 @@ class Api::UrlsController < Api::ApiController
     end
 
     begin
-      page = Nokogiri::HTML(open(@url.link)) # get the all the page content
+      page = @url.readContent
       raise 'Invaild Input' unless page
     rescue
       render status: :unprocessable_entity, json: {
