@@ -52,11 +52,6 @@ class Api::UrlsController < Api::ApiController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_url
-    @url = Url.find(params[:id])
-  end
-
   # Only allow a trusted parameter "white list" through.
   def url_params
     params.require(:url).permit(:link)
