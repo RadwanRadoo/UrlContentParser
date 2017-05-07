@@ -19,6 +19,8 @@ Checkout this repo, install dependencies, then start with the following:
 ```
 > git clone https://github.com/RadwanRadoo/UrlContentParser.git
 > cd UrlContentParser
+> cp config/database.yml.sample config/database.yml
+> Then fill in your own password and username
 > bundle install
 > rake db:setup
 > rake db:migrate
@@ -29,6 +31,9 @@ Checkout this repo, install dependencies, then start with the following:
 Click [here](https://github.com/RadwanRadoo/UrlContentParser/archive/develop.zip) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
 
 ```
+> cd UrlContentParser
+> cp config/database.yml.sample config/database.yml
+> Then fill in your own password and username
 > bundle install
 > rake db:setup
 > rake db:migrate
