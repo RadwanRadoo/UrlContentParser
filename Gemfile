@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
@@ -28,22 +27,21 @@ gem 'puma', '~> 3.0'
 # for parse html or xml from web pages
 gem 'nokogiri'
 
-#A Community-updated Net::HTTP certificate authority file hack.
+# A Community-updated Net::HTTP certificate authority file hack.
 # Very useful for authoring Ruby-based HTTP clients that must run on Windows.
 # Used for remove ()SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed) error
 gem 'net_http_ssl_fix', require: 'net_http_ssl_fix'
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   # for testing
-  gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'rspec-rails'
 end
 
 group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

@@ -10,24 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170506155727) do
-
+ActiveRecord::Schema.define(version: 20_170_506_155_727) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "contents", force: :cascade do |t|
-    t.text     "tagcontent"
-    t.integer  "url_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["url_id"], name: "index_contents_on_url_id", using: :btree
+  create_table 'contents', force: :cascade do |t|
+    t.text     'tagcontent'
+    t.integer  'url_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['url_id'], name: 'index_contents_on_url_id', using: :btree
   end
 
-  create_table "urls", force: :cascade do |t|
-    t.string   "link"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'urls', force: :cascade do |t|
+    t.string   'link'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  add_foreign_key "contents", "urls"
+  add_foreign_key 'contents', 'urls'
 end

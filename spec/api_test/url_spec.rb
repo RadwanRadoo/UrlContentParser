@@ -11,12 +11,10 @@ RSpec.describe Api::UrlsController, type: :controller do
     it { expect(response.code).to eq '200' }
     it_behaves_like 'JSON APIs when request succeeds'
     it { expect(payload).to be_kind_of Object }
-    it { expect(payload).to include('urls') unless payload.kind_of?(Array) }
+    it { expect(payload).to include('urls') unless payload.is_a?(Array) }
   end
 
-
   describe 'POST /create succeeded' do
-
     before do
       post :create, url: { link: 'http://www.nokogiri.org/' }
     end
@@ -29,7 +27,6 @@ RSpec.describe Api::UrlsController, type: :controller do
     it { expect(payload['message']).to eql('page content saved successfully') }
   end
 
-
   describe 'POST /create Failed' do
     before do
       post :create, url: { link: 'http://fdsdsfdsfdsfdsf.com' }
@@ -37,5 +34,4 @@ RSpec.describe Api::UrlsController, type: :controller do
 
     it_behaves_like 'JSON APIs when request fails'
   end
-
 end

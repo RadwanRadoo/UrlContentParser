@@ -1,4 +1,4 @@
-shared_context "API Context" do
+shared_context 'API Context' do
   render_views
 
   let(:payload) { JSON.parse(response.body) }
@@ -11,7 +11,7 @@ end
 shared_examples 'JSON APIs' do
   describe 'response' do
     describe 'content type' do
-      it { expect(response.header['Content-Type']).to include "application/json" }
+      it { expect(response.header['Content-Type']).to include 'application/json' }
     end
   end
 end
