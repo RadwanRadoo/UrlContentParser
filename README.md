@@ -38,5 +38,5 @@ Click [here](https://github.com/RadwanRadoo/UrlContentParser/archive/develop.zip
 #### run the test suite using this command
 
 ```
-> rspec        # this will run all testcases with in folder '/spec'
+> rspec
 ```
